@@ -6,12 +6,15 @@
  */
 class Movie
 {
-    public $title;
-    public $overview;
-    public $duration;
-    public $cast;
+    // public $title;
+    // public $overview;
+    // public $duration;
+    // public $cast;
+    // public $genres;
 
-    public function __construct($title, $overview, $duration, $cast)
+    public static $staticProperty = "I don't need an object";
+
+    public function __construct(public $title, public $overview, public $duration, public array $genres, public $cast = [])
     {
         // Select an object property inside a class using the $this variable
         // The $this always refer to the objectin which it was used
@@ -19,6 +22,7 @@ class Movie
         $this->overview = $overview;
         $this->duration = $duration;
         $this->cast = $cast;
+        $this->genres = $genres;
     }
 
     // Setter for $cast
@@ -33,3 +37,12 @@ class Movie
         return $this->cast;
     }
 }
+
+
+
+// non static propery
+//$avatar = new Movie(); // this is an istance of the Movie class (object)
+
+// static property
+// not in an object context
+Movie::$staticProperty;
