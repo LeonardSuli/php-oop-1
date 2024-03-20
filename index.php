@@ -1,41 +1,10 @@
 <?php
 
-// Class declaration
-/**
- * Class Movie
- */
-class Movie
-{
-    public $title;
-    public $overview;
-    public $duration;
-    public $cast;
-
-    public function __construct($title, $overview, $duration, $cast)
-    {
-        // Select an object property inside a class using the $this variable
-        // The $this always refer to the objectin which it was used
-        $this->title = $title;
-        $this->overview = $overview;
-        $this->duration = $duration;
-        $this->cast = $cast;
-    }
-
-    // Setter for $cast
-    public function setCast($cast)
-    {
-        $this->cast = $cast;
-    }
-
-    // Getter for $cast
-    public function getCast()
-    {
-        return $this->cast;
-    }
-}
+require_once __DIR__ . '/app/Models/Movie.php';
+require_once __DIR__ . '/database/db.php';
 
 // Create an istance of a class with 'new' keyword 
-$dune = new Movie('Dune', 'Paul Atreides, a brilliant and gifted young man...', 155, []);
+// $dune = new Movie('Dune', 'Paul Atreides, a brilliant and gifted young man...', 155, []);
 
 // Write values to each property of the object or if they exists updates exising values
 // $dune->title = 'Dune';
@@ -43,34 +12,34 @@ $dune = new Movie('Dune', 'Paul Atreides, a brilliant and gifted young man...', 
 // $dune->duration = 155;
 // $dune->cast = [];
 
-$dune->setCast([
-    "Timothée Chalamet",
-    "Rebecca Ferguson",
-    "Oscar Isaac",
-    "Josh Brolin",
-    "Stellan Skarsgård",
-    "Dave Bautista",
-    "Zendaya",
-    "Jason Momoa",
-    "Javier Bardem"
-]);
+// $dune->setCast([
+//     "Timothée Chalamet",
+//     "Rebecca Ferguson",
+//     "Oscar Isaac",
+//     "Josh Brolin",
+//     "Stellan Skarsgård",
+//     "Dave Bautista",
+//     "Zendaya",
+//     "Jason Momoa",
+//     "Javier Bardem"
+// ]);
 
 // var_dump($dune);
 // var_dump($dune->getCast());
 
 
 // Create a second istance of movies
-$matrix = new Movie('Matrix', 'The Matrix tells the story of a computer hacker...', 136, [
-    "Keanu Reeves",
-    "Laurence Fishburne",
-    "Carrie-Anne Moss",
-    "Hugo Weaving",
-    "Joe Pantoliano",
-    "Gloria Foster",
-    "Marcus Chong",
-    "Julian Arahanga",
-    "Matt Doran"
-]);
+// $matrix = new Movie('Matrix', 'The Matrix tells the story of a computer hacker...', 136, [
+//     "Keanu Reeves",
+//     "Laurence Fishburne",
+//     "Carrie-Anne Moss",
+//     "Hugo Weaving",
+//     "Joe Pantoliano",
+//     "Gloria Foster",
+//     "Marcus Chong",
+//     "Julian Arahanga",
+//     "Matt Doran"
+// ]);
 
 // Write values to each property of the object or if they exists updates exising values
 // $matrix->title = 'Matrix';
@@ -83,7 +52,7 @@ $matrix = new Movie('Matrix', 'The Matrix tells the story of a computer hacker..
 
 
 
-$movies = [$dune, $matrix];
+// $movies = [$dune, $matrix];
 
 // var_dump($movies);
 
